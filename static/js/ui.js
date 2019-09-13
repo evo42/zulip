@@ -12,7 +12,11 @@ exports.replace_emoji_with_text = function (element) {
 };
 
 exports.get_content_element = function (element_selector) {
-    const element = element_selector.expectOne()[0];
+    if (element_selector.length < 1) {
+        return; // BBS
+    }
+    
+    var element = element_selector.expectOne()[0];
     if (element.SimpleBar) {
         return $(element.SimpleBar.getContentElement());
     }

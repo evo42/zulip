@@ -68,11 +68,11 @@ function get_new_heights() {
     var buddy_list_wrapper = 0;
     var group_pms = 0;
 
-    if ($('#buddy_list_wrapper').length < 1) {
-        var buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
+    if ($('#buddy_list_wrapper').length > 0) {
+        buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
     }
 
-    if ($('#group-pms').length < 1) {
+    if ($('#group-pms').length > 0) {
         group_pms = $('#group-pms').expectOne();
     }
 

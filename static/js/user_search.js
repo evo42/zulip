@@ -3,7 +3,11 @@ const user_search = function (opts) {
     // above the buddy list.  We rely on other code to manage the
     // details of populating the list when we change.
 
-    const self = {};
+    if ($('.user-list-filter').length < 1) {
+        return;
+    }
+
+    var self = {};
 
     const $widget = $('#user_search_section').expectOne();
     const $input = $('.user-list-filter').expectOne();

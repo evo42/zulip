@@ -65,14 +65,20 @@ function get_new_heights() {
     res.stream_filters_max_height = Math.max(80, res.stream_filters_max_height);
 
     // RIGHT SIDEBAR
-    const buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
-    const group_pms = $('#group-pms').expectOne();
+    var buddy_list_wrapper = 0;
+    var group_pms = 0;
 
-    const usable_height = viewport_height
+    if ($('#buddy_list_wrapper').length < 1) {
+        var buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
+    }
+
+    if ($('#group-pms').length < 1) {
+        var group_pms = $('#group-pms').expectOne();
+    }
+
+    var usable_height = viewport_height
         - parseInt($("#right-sidebar").css("marginTop"), 10)
         - $("#feedback_section").safeOuterHeight(true)
-        - parseInt(buddy_list_wrapper.css("marginTop"), 10)
-        - parseInt(buddy_list_wrapper.css("marginBottom"), 10)
         - $("#userlist-header").safeOuterHeight(true)
         - $("#user_search_section").safeOuterHeight(true)
         - invite_user_link_height
@@ -80,6 +86,12 @@ function get_new_heights() {
         - parseInt(group_pms.css("marginBottom"), 10)
         - $("#group-pm-header").safeOuterHeight(true)
         - $("#sidebar-keyboard-shortcuts").safeOuterHeight(true);
+    
+    if (buddy_list_wrapper) {
+        usable_height = usable_height
+        - parseInt(buddy_list_wrapper.css("marginTop"), 10)
+        - parseInt(buddy_list_wrapper.css("marginBottom"), 10)
+    }
 
     // set these
     // res.buddy_list_wrapper_max_height

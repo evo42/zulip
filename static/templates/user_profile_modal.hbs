@@ -15,12 +15,15 @@
                 {{/if}}
             </div>
             <br>
+
             {{#if show_email}}
             <div id="email" class="default-field">
                 <span class="name">{{#tr this}}Email{{/tr}}</span>
                 <span class="value">{{email}}</span>
             </div>
             {{/if}}
+
+            {{#unless user_is_guest}}
             <div id="date-joined" class="default-field">
                 <span class="name">{{#tr this}}Joined{{/tr}}</span>
                 <span class="value">{{date_joined}}</span>
@@ -33,12 +36,16 @@
                 <span class="name">{{#tr this}}Last active{{/tr}}</span>
                 <span class="value">{{last_seen}}</span>
             </div>
+            {{#unless}}
+
+            <!--
             {{#if user_time}}
             <div class="default-field">
                 <span class="name">{{#tr this}}Local time{{/tr}}</span>
                 <span class="value">{{user_time}}</span>
             </div>
             {{/if}}
+            -->
         </div>
         <hr>
         <div id="content">

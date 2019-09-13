@@ -14,6 +14,7 @@
                     </a>
                     <span class="alert-draft pull-left">{{ _('Saved as draft') }}</span>
                 </span>
+
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_mobile_button"
                       id="left_bar_compose_mobile_button_big"
@@ -21,6 +22,7 @@
                         <span>+</span>
                     </button>
                 </span>
+
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_stream_button"
                       id="left_bar_compose_stream_button_big"
@@ -28,7 +30,8 @@
                         <span class="compose_stream_button_label">{{ _('New topic') }}</span>
                     </button>
                 </span>
-                {% if not embedded %}
+
+                {% if not embedded OR not is_guest %}
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_private_button"
                       id="left_bar_compose_private_button_big"
@@ -37,6 +40,7 @@
                     </button>
                 </span>
                 {% endif %}
+
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_reply_button"
                       id="left_bar_compose_reply_button_big"
@@ -73,6 +77,22 @@
                                 <input type="text" class="recipient_box" name="stream_message_recipient_topic" id="stream_message_recipient_topic" maxlength="60" value="" placeholder="{{ _('Topic') }}" autocomplete="off" tabindex="0" aria-label="{{ _('Topic') }}" />
                             </div>
                         </div>
+
+                        {% if user_is_guest %}
+                                <div id="check-user-is-guest">
+                                    
+                                </div>
+                        {% endif %}
+
+                        {% if is_guest %}
+                        <div id="private-message">
+                            <div>
+                                <span>{{ _('Inactive') }}</span>
+                            </div>
+                        </div>
+
+                        {% else %}
+
                         <div id="private-message">
                             <div class="to_text">
                                 <span>{{ _('To') }}:</span>
@@ -85,6 +105,8 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
+
                         <div>
                             <div class="messagebox">
                                 <textarea class="new_message_textarea" name="content" id='compose-textarea' placeholder="{{ _('Compose your message here') }}" tabindex="0" maxlength="10000" aria-label="{{ _('Compose your message here...') }}"></textarea>

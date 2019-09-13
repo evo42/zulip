@@ -226,7 +226,11 @@ exports.resize_page_components = function () {
     var sidebar;
 >>>>>>> js: Convert vars declared separately and assigned once to const.
 
+<<<<<<< HEAD
     return; // todo BBS
+=======
+    return;
+>>>>>>> fix js error with missing buddylist
 
     if (page_params.left_side_userlist) {
         const css_narrow_mode = message_viewport.is_narrow();

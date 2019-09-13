@@ -26,6 +26,9 @@ function size_blocks(blocks, usable_height) {
 }
 
 function set_user_list_heights(res, usable_height, buddy_list_wrapper, group_pms) {
+
+    return; // BBS
+    
     // Calculate these heights:
     //    res.buddy_list_wrapper_max_height
     //    res.group_pms_max_height

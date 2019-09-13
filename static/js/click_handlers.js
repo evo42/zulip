@@ -450,7 +450,7 @@ exports.initialize = function () {
         }
     });
 
-    if ($('#group-pms').length > 0) {
+    if ($('#user_presences').length > 0) {
         $('#user_presences').expectOne().on('click', '.selectable_sidebar_block', function (e) {
             var li = $(e.target).parents('li');
 
@@ -461,7 +461,6 @@ exports.initialize = function () {
             popovers.hide_all();
         });
     }
-
 
     if ($('#group-pms').length > 0) {
         $('#group-pms').expectOne().on('click', '.selectable_sidebar_block', function (e) {

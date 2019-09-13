@@ -31,7 +31,8 @@
                     </button>
                 </span>
 
-                {% if not embedded || not is_guest %}
+                {% if not embedded %}
+                {% if not is_guest %}
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_private_button"
                       id="left_bar_compose_private_button_big"
@@ -39,6 +40,7 @@
                         <span class="compose_private_button_label">{{ _('New private message') }}</span>
                     </button>
                 </span>
+                {% endif %}
                 {% endif %}
 
                 <span class="new_message_button">

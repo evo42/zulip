@@ -326,7 +326,7 @@ function buddy_list_create() {
         if ($(self.scroll_container_sel).length < 1) {
             return;
         }
-        
+
         // We have our caller explicitly call this to make
         // sure everything's in place.
         var scroll_container = ui.get_scroll_element($(self.scroll_container_sel));

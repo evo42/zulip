@@ -80,21 +80,7 @@
                             </div>
                         </div>
 
-                        {% if user_is_guest %}
-                                <div id="check-user-is-guest">
-                                    <span>is guest</span>
-                                </div>
-                        {% endif %}
-
-                        {% if is_guest %}
-                        <div id="private-message">
-                            <div>
-                                <span>{{ _('Inactive') }}</span>
-                            </div>
-                        </div>
-
-                        {% else %}
-
+                        {% if not is_guest %}
                         <div id="private-message">
                             <div class="to_text">
                                 <span>{{ _('To') }}:</span>

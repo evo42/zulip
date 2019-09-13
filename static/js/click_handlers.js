@@ -455,24 +455,29 @@ exports.initialize = function () {
         }
     });
 
-    $('#user_presences').expectOne().on('click', '.selectable_sidebar_block', function (e) {
-        var li = $(e.target).parents('li');
+    if ($('#group-pms').length > 0) {
+        $('#user_presences').expectOne().on('click', '.selectable_sidebar_block', function (e) {
+            var li = $(e.target).parents('li');
 
-        activity.narrow_for_user({li: li});
+            activity.narrow_for_user({li: li});
 
-        e.preventDefault();
-        e.stopPropagation();
-        popovers.hide_all();
-    });
+            e.preventDefault();
+            e.stopPropagation();
+            popovers.hide_all();
+        });
+    }
 
-    $('#group-pms').expectOne().on('click', '.selectable_sidebar_block', function (e) {
-        var user_ids_string = $(e.target).parents('li').attr('data-user-ids');
-        var emails = people.user_ids_string_to_emails_string(user_ids_string);
-        narrow.by('pm-with', emails, {trigger: 'sidebar'});
-        e.preventDefault();
-        e.stopPropagation();
-        popovers.hide_all();
-    });
+
+    if ($('#group-pms').length > 0) {
+        $('#group-pms').expectOne().on('click', '.selectable_sidebar_block', function (e) {
+            var user_ids_string = $(e.target).parents('li').attr('data-user-ids');
+            var emails = people.user_ids_string_to_emails_string(user_ids_string);
+            narrow.by('pm-with', emails, {trigger: 'sidebar'});
+            e.preventDefault();
+            e.stopPropagation();
+            popovers.hide_all();
+        });
+    }
 
     $("#subscriptions_table").on("click", ".exit, #subscription_overlay", function (e) {
         if ($(e.target).is(".exit, .exit-sign, #subscription_overlay, #subscription_overlay > .flex")) {

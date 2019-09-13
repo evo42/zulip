@@ -219,6 +219,8 @@ exports.resize_stream_filters_container = function (h) {
 exports.resize_page_components = function () {
     let sidebar;
 
+    return;
+
     if (page_params.left_side_userlist) {
         const css_narrow_mode = message_viewport.is_narrow();
 

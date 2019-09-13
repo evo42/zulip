@@ -250,9 +250,12 @@ exports.update_huddles = function () {
         };
     });
 
-    const html = render_group_pms({group_pms: group_pms});
+    /*
+    // BBS guest
+    var html = render_group_pms({group_pms: group_pms});
     ui.get_content_element($('#group-pms')).html(html);
-
+    */
+   
     _.each(huddles, function (user_ids_string) {
         const count = unread.num_unread_for_person(user_ids_string);
         set_group_count(user_ids_string, count);

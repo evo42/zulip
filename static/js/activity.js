@@ -255,7 +255,7 @@ exports.update_huddles = function () {
     var html = render_group_pms({group_pms: group_pms});
     ui.get_content_element($('#group-pms')).html(html);
     */
-   
+
     _.each(huddles, function (user_ids_string) {
         const count = unread.num_unread_for_person(user_ids_string);
         set_group_count(user_ids_string, count);
@@ -439,7 +439,7 @@ function keydown_enter_key() {
 
 exports.set_cursor_and_filter = function () {
     exports.user_cursor = list_cursor({
-        list: buddy_list,
+        // BBS guest list: buddy_list,
         highlight_class: 'highlighted_user',
     });
 

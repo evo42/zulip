@@ -251,9 +251,12 @@ exports.update_huddles = function () {
         };
     });
 
+    /*
+    // BBS guest
     var html = render_group_pms({group_pms: group_pms});
     ui.get_content_element($('#group-pms')).html(html);
-
+    */
+   
     _.each(huddles, function (user_ids_string) {
         var count = unread.num_unread_for_person(user_ids_string);
         set_group_count(user_ids_string, count);

@@ -288,7 +288,12 @@ function buddy_list_create() {
     };
 
     self.fill_screen_with_content = function () {
-        let height = self.height_to_fill();
+
+        if (!$(self.scroll_container_sel)) {
+            return;
+        }
+        
+        var height = self.height_to_fill();
 
         const elem = ui.get_scroll_element($(self.scroll_container_sel)).expectOne()[0];
 

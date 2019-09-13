@@ -439,8 +439,10 @@ function keydown_enter_key() {
 }
 
 exports.set_cursor_and_filter = function () {
+    return; // BBS guest
+    
     exports.user_cursor = list_cursor({
-        // BBS guest list: buddy_list,
+        list: buddy_list,
         highlight_class: 'highlighted_user',
     });
 

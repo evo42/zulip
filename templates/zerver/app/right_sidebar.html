@@ -7,6 +7,8 @@
             </button>
         </div>
         {% endif %}
+
+        {% if not is_guest %}
         <div id="user-list">
             <div id="userlist-header">
                 <h4 class='sidebar-title' id='userlist-title' data-toggle="tooltip" title="{{ _('Filter users') }}">{{ _('USERS') }}</h4>
@@ -23,6 +25,8 @@
                 <div id="buddy_list_wrapper_padding"></div>
             </div>
         </div>
+        {% endif %}
+
         <div id="group-pm-list">
             <div id="group-pm-header">
                 <h4 class='sidebar-title' id='group-pm-title'>{{ _('GROUP PMs') }}</h4>

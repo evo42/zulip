@@ -200,11 +200,12 @@ exports.build_user_sidebar = function () {
 
     var filter_text = exports.get_filter_text();
 
+/*
     var user_ids = buddy_data.get_filtered_and_sorted_user_ids(filter_text);
 
     buddy_list.populate({
         keys: user_ids,
-    });
+    });*/
 
     resize.resize_page_components();
 

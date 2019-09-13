@@ -225,6 +225,8 @@ exports.resize_page_components = function () {
     var h;
     var sidebar;
 
+    return;
+
     if (page_params.left_side_userlist) {
         var css_narrow_mode = message_viewport.is_narrow();
 

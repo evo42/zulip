@@ -1,5 +1,10 @@
 exports.initialize_pill = function () {
-    const container = $("#private_message_recipient").parent();
+    var pill;
+    var container = $("#private_message_recipient").parent();
+    
+    if (container.length < 1) {
+        return;
+    }
 
     const pill = input_pill.create({
         container: container,

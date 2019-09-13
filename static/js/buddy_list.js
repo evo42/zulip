@@ -290,6 +290,11 @@ function buddy_list_create() {
     };
 
     self.fill_screen_with_content = function () {
+
+        if (!$(self.scroll_container_sel)) {
+            return;
+        }
+        
         var height = self.height_to_fill();
 
         var elem = ui.get_scroll_element($(self.scroll_container_sel)).expectOne()[0];

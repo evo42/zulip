@@ -70,11 +70,15 @@ function get_new_heights() {
 
     // RIGHT SIDEBAR
     var buddy_list_wrapper = null;
-    var group_pms = $('#group-pms').expectOne();
+    var group_pms = null;
 
     if ($('#buddy_list_wrapper').length < 1) {
-        var buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
+        buddy_list_wrapper = $('#buddy_list_wrapper').expectOne();
 
+    }
+
+    if ($('#group-pms').length < 1) {
+        group_pms = $('#group-pms').expectOne();
     }
 
     var usable_height = viewport_height
@@ -83,17 +87,21 @@ function get_new_heights() {
         - $("#userlist-header").safeOuterHeight(true)
         - $("#user_search_section").safeOuterHeight(true)
         - invite_user_link_height
-        - parseInt(group_pms.css("marginTop"), 10)
-        - parseInt(group_pms.css("marginBottom"), 10)
         - $("#group-pm-header").safeOuterHeight(true)
         - $("#sidebar-keyboard-shortcuts").safeOuterHeight(true);
     
     if (buddy_list_wrapper) {
         usable_height = usable_height
         - parseInt(buddy_list_wrapper.css("marginTop"), 10)
-        - parseInt(buddy_list_wrapper.css("marginBottom"), 10)
+        - parseInt(buddy_list_wrapper.css("marginBottom"), 10);
     }
 
+    if (group_pms) {
+        usable_height = usable_height
+        - parseInt(group_pms.css("marginTop"), 10)
+        - parseInt(group_pms.css("marginBottom"), 10);
+    }
+        
     // set these
     // res.buddy_list_wrapper_max_height
     // res.group_pms_max_height

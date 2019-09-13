@@ -20,6 +20,9 @@ exports.initialize = function () {
 };
 
 exports.clear = function () {
+    if (!exports.widget) {
+        return;
+    }
     exports.widget.clear();
 };
 

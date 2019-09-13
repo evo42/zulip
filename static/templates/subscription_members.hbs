@@ -1,3 +1,4 @@
+{{#unless is_guest}}
 {{#render_subscribers}}
 <div class="subscriber_list_settings_container" {{#unless can_access_subscribers}}style="display: none"{{/unless}}>
     <div class="subscriber_list_settings">
@@ -28,3 +29,4 @@
     </div>
 </div>
 {{/render_subscribers}}
+{{/unless}}

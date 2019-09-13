@@ -1,5 +1,7 @@
 {{! Client-side Mustache template for rendering users in the stream creation modal.}}
 
+{{#unless user_is_guest}}
+
 <div id="copy-from-stream-expand-collapse" class="add-user-label">
     <i class="toggle fa fa-caret-right" aria-hidden="true"></i>
     <span class="control-label">
@@ -36,3 +38,5 @@
     </label>
     {{/each}}
 </div>
+
+{{/unless}}

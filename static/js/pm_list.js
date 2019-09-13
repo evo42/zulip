@@ -61,7 +61,7 @@ function remove_expanded_private_messages() {
 
 exports.close = function () {
     private_messages_open = false;
-    remove_expanded_private_messages();
+    // BBS guest remove_expanded_private_messages();
 };
 
 exports._build_private_messages_list = function (active_conversation) {

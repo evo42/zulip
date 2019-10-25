@@ -16,7 +16,7 @@ function message_unhover() {
 }
 
 function message_hover(message_row) {
-    const id = parseInt(message_row.attr("zid"), 10);
+    var id = parseInt(message_row.attr("zid"), 10);
     if (current_message_hover && message_row && current_message_hover.attr("zid") === message_row.attr("zid")) {
         return;
     }

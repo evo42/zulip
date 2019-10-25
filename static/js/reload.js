@@ -248,11 +248,11 @@ exports.initiate = function (options) {
     // If the user is composing a message, reload if they become idle
     // while composing.  If they finish or cancel the compose, wait
     // until they're idle again
-    let idle_control;
-    const unconditional_timeout = 1000 * 60 * 30 + util.random_int(0, 1000 * 60 * 5);
-    const composing_timeout     = 1000 * 60 * 5  + util.random_int(0, 1000 * 60);
-    const home_timeout          = 1000 * 60    + util.random_int(0, 1000 * 60);
-    let compose_started_handler;
+    var idle_control;
+    var unconditional_timeout = 1000 * 60 * 30 + util.random_int(0, 1000 * 60 * 5);
+    var composing_timeout     = 1000 * 60 * 5  + util.random_int(0, 1000 * 60);
+    var home_timeout          = 1000 * 60    + util.random_int(0, 1000 * 60);
+    var compose_started_handler;
 
     function reload_from_idle() {
         do_reload_app(false,

@@ -86,8 +86,8 @@ run_test('operators_trailing_slash', () => {
 });
 
 run_test('people_slugs', () => {
-    let operators;
-    let hash;
+    var operators;
+    var hash;
 
     const alice = {
         email: 'alice@example.com',

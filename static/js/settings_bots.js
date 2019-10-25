@@ -114,8 +114,8 @@ exports.render_bots = function () {
 };
 
 exports.generate_zuliprc_uri = function (bot_id) {
-    const bot = bot_data.get(bot_id);
-    let token;
+    var bot = bot_data.get(bot_id);
+    var token;
     // For outgoing webhooks, include the token in the zuliprc.
     // It's needed for authenticating to the Botserver.
     if (bot.bot_type === 3) {

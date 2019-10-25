@@ -1,5 +1,4 @@
 exports.initialize_pill = function () {
-    var pill;
     var container = $("#private_message_recipient").parent();
     
     if (container.length < 1) {

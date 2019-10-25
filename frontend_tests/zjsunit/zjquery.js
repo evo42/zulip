@@ -73,8 +73,8 @@ exports.make_event_store = (selector) => {
             // parameters will either be
             //    (event_name, handler) or
             //    (event_name, sel, handler)
-            const event_name = arguments[0];
-            let handler;
+            var event_name = arguments[0];
+            var handler;
 
             if (arguments.length === 2) {
                 handler = arguments[1];

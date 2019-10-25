@@ -561,9 +561,9 @@ exports.get_suggestions = function (base_query, query) {
     // the tests.  Its API is partly shaped by the typeahead library, which wants
     // us to give it strings only, but we also need to return our caller a hash
     // with information for subsequent callbacks.
-    let result = [];
-    let suggestion;
-    let suggestions;
+    var result = [];
+    var suggestion;
+    var suggestions;
 
     // base_query_operators correspond to the existing pills. query_operators correspond
     // to the operators for the query in the input. This query may contain one or more
@@ -703,9 +703,9 @@ exports.get_suggestions_legacy = function (query) {
     // the tests.  Its API is partly shaped by the typeahead library, which wants
     // us to give it strings only, but we also need to return our caller a hash
     // with information for subsequent callbacks.
-    let result = [];
-    let suggestion;
-    let suggestions;
+    var result = [];
+    var suggestion;
+    var suggestions;
 
     // Add an entry for narrow by operators.
     const operators = Filter.parse(query);

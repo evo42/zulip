@@ -273,7 +273,7 @@ exports.cancel = function () {
 };
 
 exports.respond_to_message = function (opts) {
-    let msg_type;
+    var msg_type;
     // Before initiating a reply to a message, if there's an
     // in-progress composition, snapshot it.
     drafts.update_draft();

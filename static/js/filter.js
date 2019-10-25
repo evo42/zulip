@@ -261,7 +261,7 @@ Filter.parse = function (str) {
         return operators;
     }
     _.each(matches, function (token) {
-        let operator;
+        var operator;
         const parts = token.split(':');
         if (token[0] === '"' || parts.length === 1) {
             // Looks like a normal search term.

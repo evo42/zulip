@@ -450,11 +450,8 @@ exports.initialize = function () {
         }
     });
 
-<<<<<<< HEAD
-    if ($('#user_presences').length > 0) {
-=======
+    //if ($('#user_presences').length > 0) {
     if ($('#group-pms').length > 0) {
->>>>>>> js fix guests without pm list
         $('#user_presences').expectOne().on('click', '.selectable_sidebar_block', function (e) {
             var li = $(e.target).parents('li');
 
@@ -466,10 +463,6 @@ exports.initialize = function () {
         });
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> js fix guests without pm list
     if ($('#group-pms').length > 0) {
         $('#group-pms').expectOne().on('click', '.selectable_sidebar_block', function (e) {
             var user_ids_string = $(e.target).parents('li').attr('data-user-ids');

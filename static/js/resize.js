@@ -220,11 +220,7 @@ exports.resize_stream_filters_container = function (h) {
 };
 
 exports.resize_page_components = function () {
-<<<<<<< HEAD
-    let sidebar;
-=======
     var sidebar;
->>>>>>> js: Convert vars declared separately and assigned once to const.
 
     return; // todo BBS
 
